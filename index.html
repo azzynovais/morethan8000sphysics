@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fisica mais de 8 mil</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <div class="app-container"> <header class="header">
+            <div class="top-bar"> <div class="logo">
+                    <div class="logo-img"></div>
+                    <span class="logo-text">Fisica mais de 8 mil</span>
+                </div>
+
+            </div>
+            <div class="hero"> <div class="hero-content">
+                    <h1>Fisica mais de 8 mil</h1>
+                    <p>Calculadora para MU, MUV e Conversões</p>
+                </div>
+            </div>
+        </header>
+
+        <main class="hero"> <nav class="tabs">
+                <button class="button primary" data-tab="conversors">Conversores</button>
+                <button class="button primary" data-tab="mu">Movimento Uniforme</button>
+                <button class="button primary" data-tab="muv">MUV</button>
+            </nav>
+
+            <section id="conversors" class="hero-content"> <div class="hero-content"> <div class="card">
+                        <div class="icon">🏹</div>
+                        <h3>Distância (km → m)</h3>
+                        <div class="button">
+                            <input type="number" id="km-input" placeholder="Quilômetros" />
+                            <button onclick="convertKmToM()" class="button primary">Converter</button>
+                        </div>
+                        <div class="result" id="km-result"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">⛈️</div>
+                        <h3>Tempo (h → min)</h3>
+                        <div class="input-group">
+                            <input type="number" id="hour-input" placeholder="Horas" />
+                            <button onclick="convertHourToMin()" class="button primary">Converter</button>
+                        </div>
+                        <div class="result" id="hour-result"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">🚗</div>
+                        <h3>Velocidade (km/h → m/s)</h3>
+                        <div class="input-group">
+                            <input type="number" id="speed-input" placeholder="km/h" />
+                            <button onclick="convertSpeed()" class="button primary">Converter</button>
+                        </div>
+                        <div class="result" id="speed-result"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">🎈</div>
+                        <h3>Altura (m → cm)</h3>
+                        <div class="input-group">
+                            <input type="number" id="height-input" placeholder="Metros" />
+                            <button onclick="convertHeight()" class="button primary">Converter</button>
+                        </div>
+                        <div class="result" id="height-result"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mu" class="hero-content">
+                <div class="formula-box hero-content">
+                    <h2>📐 Fórmulas do Movimento Uniforme</h2>
+                    <div class="formula">
+                        <strong>Velocidade:</strong> V = ΔS / Δt<br />
+                        <strong>Distância:</strong> S = S₀ + V × t<br />
+                        <strong>Tempo:</strong> t = ΔS / V
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card">
+                        <div class="icon">📏</div>
+                        <h3>Calcular Velocidade</h3>
+                        <div class="input-group">
+                            <input type="number" id="mu-distance" placeholder="Distância (m)" />
+                            <input type="number" id="mu-time" placeholder="Tempo (s)" />
+                            <button onclick="calculateMUVelocity()" class="button primary">Calcular</button>
+                        </div>
+                        <div class="result" id="mu-velocity-result"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">🏹</div>
+                        <h3>Calcular Distância</h3>
+                        <div class="input-group">
+                            <input type="number" id="mu-velocity" placeholder="Velocidade (m/s)" />
+                            <input type="number" id="mu-time2" placeholder="Tempo (s)" />
+                            <input type="number" id="mu-initial-pos" placeholder="Posição inicial (m)" value="0" />
+                            <button onclick="calculateMUDistance()" class="button primary">Calcular</button>
+                        </div>
+                        <div class="result" id="mu-distance-result"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">⏰</div>
+                        <h3>Calcular Tempo</h3>
+                        <div class="input-group">
+                            <input type="number" id="mu-distance2" placeholder="Distância (m)" />
+                            <input type="number" id="mu-velocity2" placeholder="Velocidade (m/s)" />
+                            <button onclick="calculateMUTime()" class="button primary">Calcular</button>
+                        </div>
+                        <div class="result" id="mu-time-result"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="muv" class="hero">
+                <div class="hero">
+                    <h2>🚀 Fórmulas do MUV</h2>
+                    <div class="formula">
+                        <strong>Sorvetão:</strong> S = S₀ + V₀t + ½at²<br />
+                        <strong>Velocidade:</strong> V = V₀ + at<br />
+                        <strong>Torricelli:</strong> V² = V₀² + 2aΔS
+                    </div>
+                </div>
+
+                <div class="cards-grid hero-content">
+                    <div class="card">
+                        <div class="icon">🍦</div>
+                        <h3>Fórmula do Sorvete</h3>
+                        <div class="input-group">
+                            <input type="number" id="sorv-s0" placeholder="Posição inicial (m)" value="0" />
+                            <input type="number" id="sorv-v0" placeholder="Velocidade inicial (m/s)" />
+                            <input type="number" id="sorv-a" placeholder="Aceleração (m/s²)" />
+                            <input type="number" id="sorv-t" placeholder="Tempo (s)" />
+                            <button onclick="calculateSorvete()" class="button primary">Calcular</button>
+                        </div>
+                        <div class="result" id="sorv-result"></div>
+                    </div>
+
+                    <div class="card calc-card">
+                        <div class="icon">⚡</div>
+                        <h3>Velocidade Final</h3>
+                        <div class="input-group">
+                            <input type="number" id="muv-v0" placeholder="Velocidade inicial (m/s)" />
+                            <input type="number" id="muv-a" placeholder="Aceleração (m/s²)" />
+                            <input type="number" id="muv-t" placeholder="Tempo (s)" />
+                            <button onclick="calculateMUVVelocity()" class="button primary">Calcular</button>
+                        </div>
+                        <div class="result" id="muv-velocity-result"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">🚀</div>
+                        <h3>Calcular Aceleração</h3>
+                        <div class="input-group">
+                            <input type="number" id="acc-vf" placeholder="Velocidade final (m/s)" />
+                            <input type="number" id="acc-v0" placeholder="Velocidade inicial (m/s)" />
+                            <input type="number" id="acc-t" placeholder="Tempo (s)" />
+                            <button onclick="calculateAcceleration()" class="button primary">Calcular</button>
+                        </div>
+                        <div class="result" id="acc-result"></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="icon">🎯</div>
+                        <h3>Equação de Torricelli</h3>
+                        <div class="input-group">
+                            <input type="number" id="torr-v0" placeholder="Velocidade inicial (m/s)" />
+                            <input type="number" id="torr-a" placeholder="Aceleração (m/s²)" />
+                            <input type="number" id="torr-s" placeholder="ΔS (m)" />
+                            <button onclick="calculateTorricelli()" class="button primary">Calcular</button>
+                        </div>
+                        <div class="result" id="torr-result"></div>
+                    </div>
+                </div>
+            </section>
+
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
