@@ -1,21 +1,33 @@
-// Tab Navigation
-document.addEventListener('DOMContentLoaded', function() {
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
+        // Navegação por abas
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabBtns = document.querySelectorAll('[data-tab]');
+            const tabContents = document.querySelectorAll('.tab-content');
 
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all
-            tabBtns.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove classe active de todos
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
 
-            // Add active class to clicked tab
-            btn.classList.add('active');
-            const targetTab = btn.getAttribute('data-tab');
-            document.getElementById(targetTab).classList.add('active');
+                    // Adiciona classe active ao botão clicado
+                    btn.classList.add('active');
+                    const targetTab = btn.getAttribute('data-tab');
+                    const targetContent = document.getElementById(targetTab);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+
+                    // Limpa resultados ao trocar de aba
+                    clearResults();
+                });
+            });
+
+            // Adiciona validação em tempo real
+            addRealTimeValidation();
+            
+            // Adiciona botão de reset
+            addResetButton();
         });
-    });
-});
 
 // CONVERSORES
 function convertKmToM() {
