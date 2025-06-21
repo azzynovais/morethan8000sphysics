@@ -1,73 +1,49 @@
-/* Linux Mint-Y Inspired Design System */
-        :root {
-            /* Mint-Y Color Palette */
-            --mint-green: #87cf3e;
-            --mint-green-dark: #6fb52d;
-            --mint-green-light: #9dd856;
-            --mint-accent: #5eb36f;
-            
-            /* Modern Mint-Y Greys with steely blue tint */
-            --mint-grey-50: #f8f9fa;
-            --mint-grey-100: #f1f3f4;
-            --mint-grey-200: #e8ebec;
-            --mint-grey-300: #dadde0;
-            --mint-grey-400: #bdc1c6;
-            --mint-grey-500: #9aa0a6;
-            --mint-grey-600: #80868b;
-            --mint-grey-700: #5f6368;
-            --mint-grey-800: #3c4043;
-            --mint-grey-900: #202124;
-            
-            /* System colors */
-            --mint-text: #333333;
-            --mint-text-light: #5f6368;
-            --mint-text-inverse: #ffffff;
-            --mint-border: #dadce0;
-            --mint-shadow: rgba(60, 64, 67, 0.15);
-            --mint-shadow-dark: rgba(60, 64, 67, 0.3);
-            
-            /* Status colors */
-            --mint-success: #34a853;
-            --mint-warning: #fbbc05;
-            --mint-error: #ea4335;
-            --mint-info: #4285f4;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Typography - Linux Mint uses clear, readable fonts */
-        body {
-            font-family: 'Ubuntu', 'Segoe UI', 'Roboto', sans-serif;
-            background: linear-gradient(to bottom, var(--mint-grey-50), var(--mint-grey-100));
-            background-attachment: fixed;
-            color: var(--mint-text);
-            line-height: 1.6;
-            font-size: 14px;
-        }
-
-        h1, h2, h3 {
-            font-weight: 500;
-            color: var(--mint-text);
-            font-family: 'Ubuntu', sans-serif;
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
             text-align: center;
         }
 
-        h1 { font-size: 32px; }
-        h2 { font-size: 24px; }
-        h3 { font-size: 20px; }
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
 
-        /* Header - Mint-Y style with subtle borders and clean layout */
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            text-align: center;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: linear-gradient(to bottom, #f5f5f5, #e9e9e9);
+            background-attachment: fixed;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Header e navegação */
         header {
-            background: linear-gradient(to bottom, #ffffff, var(--mint-grey-50));
-            border-bottom: 1px solid var(--mint-border);
+            background: linear-gradient(to bottom, #fff, #f5f5f5);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 1px 3px var(--mint-shadow);
         }
 
         .top-bar {
@@ -77,7 +53,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            height: 48px; /* Mint-Y standard height */
+            height: 54px;
         }
 
         .logo {
@@ -88,16 +64,19 @@
         .logo-img {
             width: 32px;
             height: 32px;
-            margin-right: 12px;
-            background: linear-gradient(135deg, var(--mint-green), var(--mint-green-dark));
-            border-radius: 4px; /* Mint-Y subtle rounded corners */
+            margin-right: 10px;
+            /* Efeito esqueuomórfico para o logo */
+            border-radius: 50%;
+            background: linear-gradient(135deg, #64baff 0%, #3689e6 100%);
+            box-shadow:
+                inset 0 1px 1px rgba(255, 255, 255, 0.5),
+                0 2px 3px rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 1px 2px var(--mint-shadow);
         }
 
         .logo-img::after {
-            content: "🌿";
+            content: "🫐";
             position: absolute;
             top: 50%;
             left: 50%;
@@ -107,9 +86,8 @@
 
         .logo-text {
             font-size: 18px;
-            font-weight: 500;
-            color: var(--mint-text);
-            font-family: 'Ubuntu', sans-serif;
+            font-weight: 600;
+            color: #333;
         }
 
         .main-nav {
@@ -117,39 +95,47 @@
         }
 
         .main-nav a {
-            padding: 0 16px;
-            color: var(--mint-text-light);
+            padding: 0 15px;
+            color: #333;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 400;
+            font-weight: 500;
             position: relative;
-            height: 48px;
+            height: 54px;
             display: flex;
             align-items: center;
-            transition: all 0.2s ease;
-            border-radius: 4px;
-            margin: 0 2px;
+            transition: color 0.2s;
         }
 
         .main-nav a:hover {
-            color: var(--mint-text);
-            background: var(--mint-grey-100);
+            color: #3689e6;
         }
 
         .main-nav a.active {
-            color: var(--mint-green-dark);
-            background: rgba(135, 207, 62, 0.1);
-            font-weight: 500;
+            color: #3689e6;
         }
 
-        /* Hero section - Mint-Y inspired with clean gradients */
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            right: 15px;
+            height: 3px;
+            background: linear-gradient(to right, #64baff, #3689e6);
+            border-radius: 1.5px 1.5px 0 0;
+            box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero section */
         .hero {
-            background: linear-gradient(135deg, var(--mint-green) 0%, var(--mint-green-dark) 100%);
-            color: var(--mint-text-inverse);
+            background: linear-gradient(135deg, #64baff 0%, #3689e6 100%);
+            color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 20px;
             position: relative;
             overflow: hidden;
+            box-shadow: inset 0 -3px 6px rgba(0, 0, 0, 0.1);
         }
 
         .hero::before {
@@ -159,7 +145,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.5);
         }
 
         .hero-content {
@@ -171,24 +157,23 @@
         }
 
         .hero h1 {
-            font-size: 42px;
+            font-size: 48px;
             font-weight: 300;
-            margin-bottom: 16px;
-            color: var(--mint-text-inverse);
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .hero p {
-            font-size: 16px;
-            margin-bottom: 24px;
+            font-size: 18px;
+            margin-bottom: 10px;
             max-width: 600px;
             margin-left: auto;
+            color: #fff;
             margin-right: auto;
-            color: rgba(255, 255, 255, 0.95);
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
         }
 
-        /* Mint-Y subtle pattern overlay */
+        /* Padrão de fundo */
         .hero::after {
             content: "";
             position: absolute;
@@ -196,21 +181,23 @@
             height: 100%;
             top: 0;
             left: 0;
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.05) 2px, transparent 2px),
-                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
-            background-size: 24px 24px;
+            background-image:
+                linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.05) 75%),
+                linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.05) 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
             z-index: 1;
         }
 
-        /* Tabs - Mint-Y button style */
+        /* Tabs */
         .tabs {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin: 32px 0;
+            gap: 10px;
+            margin: 20px 0;
             flex-wrap: wrap;
-            padding: 0 20px;
         }
 
         .tab-content {
@@ -224,265 +211,189 @@
             display: block;
         }
 
-        /* Mint-Y Button System */
+        /* Botões */
         .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 8px 16px;
-            font-weight: 500;
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
             font-size: 14px;
             text-decoration: none;
             text-align: center;
             cursor: pointer;
-            transition: all 0.15s ease;
+            transition: all 0.2s ease;
             position: relative;
-            border: 1px solid var(--mint-border);
-            border-radius: 4px;
-            background: var(--mint-grey-50);
-            color: var(--mint-text);
-            min-height: 32px;
+            border: none;
         }
 
-        .button:hover {
-            background: var(--mint-grey-100);
-            border-color: var(--mint-grey-300);
-            box-shadow: 0 1px 2px var(--mint-shadow);
-        }
-
-        .button.primary {
-            color: var(--mint-text-inverse);
-            background: linear-gradient(to bottom, var(--mint-green-light), var(--mint-green));
-            border-color: var(--mint-green-dark);
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-        }
-
-        .button.primary:hover {
-            background: linear-gradient(to bottom, var(--mint-green), var(--mint-green-dark));
-            transform: translateY(-1px);
-            box-shadow: 0 2px 4px var(--mint-shadow);
-        }
-
-        .button.primary:active {
-            transform: translateY(0);
-            box-shadow: 0 1px 2px var(--mint-shadow-dark);
-        }
-
-        /* Input fields - Mint-Y style */
         input {
-            display: block;
-            width: 100%;
-            padding: 8px 12px;
-            font-size: 14px;
-            line-height: 1.5;
-            color: var(--mint-text);
-            background: #ffffff;
-            border: 1px solid var(--mint-border);
+            display: inline-block;
+            padding: 12px 16px;
             border-radius: 4px;
-            transition: all 0.15s ease;
-            margin-bottom: 12px;
-            min-height: 32px;
+            font-weight: 400;
+            font-size: 14px;
+            text-align: left;
+            transition: all 0.2s ease;
+            position: relative;
+            border: 1px solid #d1d1d1;
+            background: #fafafa;
+            color: #333;
+            width: 100%;
+            margin-bottom: 10px;
         }
 
         input:focus {
             outline: none;
-            border-color: var(--mint-green);
-            box-shadow: 0 0 0 2px rgba(135, 207, 62, 0.2);
+            border-color: #3689e6;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(54, 137, 230, 0.1);
         }
 
-        input:hover {
-            border-color: var(--mint-grey-400);
+        .button.primary {
+            color: white;
+            background: linear-gradient(to bottom, #7bd6ff, #3689e6);
+            border: 1px solid #2c72c7;
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 1px 1px rgba(0, 0, 0, 0.1),
+                0 2px 4px rgba(0, 0, 0, 0.1);
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
         }
 
-        /* Cards - Mint-Y panel style */
+        .button.primary:hover {
+            background: linear-gradient(to bottom, #8bdbff, #4a94e6);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.4),
+                0 1px 2px rgba(0, 0, 0, 0.2),
+                0 3px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .button.primary:active {
+            background: linear-gradient(to bottom, #3689e6, #4a94e6);
+            box-shadow:
+                inset 0 1px 3px rgba(0, 0, 0, 0.2),
+                0 1px 0 rgba(255, 255, 255, 0.4);
+            transform: translateY(1px);
+        }
+
+        /* Cards */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            margin: 24px 0;
+            margin: 20px 0;
         }
 
         .card {
-            background: #ffffff;
-            padding: 24px;
-            border-radius: 6px;
-            border: 1px solid var(--mint-border);
-            box-shadow: 0 1px 3px var(--mint-shadow);
-            transition: all 0.2s ease;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .card:hover {
-            box-shadow: 0 2px 8px var(--mint-shadow);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
         .card .icon {
             font-size: 48px;
             text-align: center;
-            margin-bottom: 16px;
-            color: var(--mint-green);
+            margin-bottom: 15px;
         }
 
         .card h3 {
-            color: var(--mint-text);
-            margin-bottom: 16px;
+            color: #333;
+            margin-bottom: 15px;
             font-size: 18px;
-            font-weight: 500;
         }
 
         .input-group {
-            margin-bottom: 16px;
+            margin-bottom: 15px;
         }
 
-        .input-group label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 500;
-            color: var(--mint-text);
-            font-size: 13px;
-        }
-
-        /* Results - Mint-Y notification style */
         .result {
-            margin-top: 16px;
-            padding: 12px;
-            background: rgba(135, 207, 62, 0.1);
-            border: 1px solid rgba(135, 207, 62, 0.3);
-            border-left: 4px solid var(--mint-green);
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
             border-radius: 4px;
-            color: var(--mint-text);
+            border-left: 4px solid #3689e6;
+            color: #000;
             font-weight: 500;
             min-height: 20px;
-            font-size: 14px;
         }
 
         .formula-box {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #000;
             padding: 20px;
-            color: var(--mint-text);
             margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 6px;
-            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .formula {
-            font-family: 'Ubuntu Mono', 'Courier New', monospace;
-            font-size: 15px;
-            color: var(--mint-text);
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            color: 000;
             line-height: 1.8;
             text-align: left;
-
         }
 
-        /* Mint-Y scrollbars */
-        ::-webkit-scrollbar {
-            width: 12px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--mint-grey-100);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--mint-grey-400);
-            border-radius: 6px;
-            border: 2px solid var(--mint-grey-100);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--mint-grey-500);
-        }
-
-        /* Status indicators */
-        .status-success { color: var(--mint-success); }
-        .status-warning { color: var(--mint-warning); }
-        .status-error { color: var(--mint-error); }
-        .status-info { color: var(--mint-info); }
-
-        /* Responsive Design - Mint-Y breakpoints */
+        /* Responsividade */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 28px; }
-            .hero p { font-size: 15px; }
-            .hero { padding: 40px 20px; }
-            
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
             .cards-grid {
                 grid-template-columns: 1fr;
-                gap: 16px;
             }
-            
+
             .tabs {
                 flex-direction: column;
-                align-items: stretch;
-                gap: 4px;
+                align-items: center;
             }
-            
+
             .tabs .button {
                 width: 100%;
-                max-width: none;
+                max-width: 300px;
             }
-            
+
             .top-bar {
-                padding: 0 16px;
-                flex-wrap: wrap;
-                height: auto;
-                min-height: 48px;
+                padding: 0 10px;
             }
-            
-            .main-nav {
-                width: 100%;
-                justify-content: center;
-                margin-top: 8px;
+
+            .hero-content {
+                padding: 0 10px;
             }
-            
-            .hero-content,
+
             .tab-content {
-                padding: 0 16px;
+                padding: 10px;
             }
         }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 24px; }
-            .card { padding: 20px; }
-            .button { 
-                padding: 6px 12px;
-                font-size: 13px;
-                min-height: 28px;
+            .hero h1 {
+                font-size: 24px;
             }
-            input { 
-                padding: 6px 10px;
-                font-size: 13px;
-                min-height: 28px;
-            }
-            .top-bar { height: auto; }
-        }
 
-        @media (prefers-color-scheme: dark) {
-            /* Optional dark mode support following Mint-Y Dark */
-            :root {
-                --mint-text: #e8eaed;
-                --mint-text-light: #9aa0a6;
-                --mint-grey-50: #202124;
-                --mint-grey-100: #303134;
-                --mint-grey-200: #3c4043;
-            }
-            
-            body {
-                background: linear-gradient(to bottom, var(--mint-grey-50), var(--mint-grey-100));
-            }
-            
-            header {
-                background: linear-gradient(to bottom, var(--mint-grey-100), var(--mint-grey-200));
-            }
-            
             .card {
-                background: var(--mint-grey-100);
-                border-color: var(--mint-grey-300);
+                padding: 15px;
             }
-            
+
+            .button {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
             input {
-                background: var(--mint-grey-200);
-                border-color: var(--mint-grey-400);
-                color: var(--mint-text);
+                padding: 10px 12px;
+                font-size: 13px;
             }
         }
